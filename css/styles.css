@@ -34,7 +34,7 @@ li{
     align-items: center;
     justify-content: center;
     border-radius: 8px;
-    background-color: tomato;
+    background-color: #222222;
     padding: 1em;
     box-shadow: 0px 7px 20px -1px rgba(0,0,0,0.57);
 }
@@ -58,7 +58,7 @@ li{
     display: flex;
     align-items: center;
     height: 50px;
-    background-color: tomato;
+    background-color: #222222;
     width: 100%;
 }
 
@@ -91,6 +91,7 @@ li{
 .links-main-card:hover{
     background-color: #fff;
     color: #414141;
+    font-size: large;
 }
 
 .fornec-card{
@@ -105,7 +106,7 @@ li{
 .cabecalho-card{
     display: flex;
     gap: 1em;
-    background-color: tomato;
+    background-color: #222222;
     color: white;
     padding: 10px;
     border-radius: 5px;
