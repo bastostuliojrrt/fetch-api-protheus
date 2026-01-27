@@ -11,24 +11,23 @@ const fornecCardsContainer = document.querySelector("#fornec-main-container");
 
 async function getFornecedores(){
 
-    const response = await fetch(url, {
+    fetch(url, {
         method: "GET",
         headers: {
             'Authorization': 'Basic YWRtaW46YWRtaW4=',
             'Content-type': 'application/json; charset=UTF-8',
         }
-    });
-
-    const data = await response.json();
-
-    loadingElement.classList.add('hide');
-    titleElement.classList.remove('hide');
-    fornecMainContainer.classList.remove('hide');
-
-
-    data.items.map((fornec) => {
-        createFornecCard(fornec);
-    });
+    }).then((response) => {
+        return response.json();
+    }).then((data) => {
+        loadingElement.classList.add('hide');
+        titleElement.classList.remove('hide');
+        fornecMainContainer.classList.remove('hide');
+        
+        data.items.map((fornec) => {
+            createFornecCard(fornec);
+        });
+    })
 
 }
 
