@@ -1,16 +1,17 @@
+// API URL
 const url = "http://localhost:8080/rest/api/crm/v1/customerVendor/2";
 
+// SELECT ELEMENTS
 const loadingElement = document.querySelector(".loading");  
 const titleElement = document.querySelector(".title");
 const fornecMainContainer = document.querySelector("#fornec-main-container");
 const fornecCards = document.querySelector("#cards");
-
 const fornecCardsContainer = document.querySelector("#fornec-main-container");
 
 // GET ALL FORNECEDORES
-
 async function getFornecedores(){
 
+    // FETCH DATA FROM API
     fetch(url, {
         method: "GET",
         headers: {
@@ -23,7 +24,7 @@ async function getFornecedores(){
         loadingElement.classList.add('hide');
         titleElement.classList.remove('hide');
         fornecMainContainer.classList.remove('hide');
-        
+        // LOOP THROUGH DATA AND CREATE CARDS
         data.items.map((fornec) => {
             createFornecCard(fornec);
         });
@@ -31,9 +32,10 @@ async function getFornecedores(){
 
 }
 
-
+// CREATE FORNECEDOR CARD
 function createFornecCard(fornec){
-  
+    
+    // CREATE ELEMENTS
     const fornecCard = document.createElement("div");
     const cabecalhoCard = document.createElement("div");
     const fornecId = document.createElement("p");   
@@ -41,11 +43,17 @@ function createFornecCard(fornec){
     const fornecName = document.createElement("h3");
     const fornecAddress = document.createElement("p");
 
+    // ADD CONTENT AND CLASSES
     fornecId.innerText = `Código: ${fornec.code}`;
     fornecLoja.innerText = `Loja: ${fornec.storeId}`;
     fornecName.innerText = fornec.name;
-    fornecAddress.innerText = `Endereço: ${fornec.address.address}, ${fornec.address.zipCode}`;
+    if(fornec.address.address.trim() === "."){
+        fornecAddress.innerText = `Endereço: Não informado`;
+    }else{
+        fornecAddress.innerText = `Endereço: ${fornec.address.address}, ${fornec.address.zipCode}`;
+    }
 
+    // APPEND ELEMENTS
     cabecalhoCard.appendChild(fornecId);
     cabecalhoCard.appendChild(fornecLoja);
     cabecalhoCard.appendChild(fornecName);
