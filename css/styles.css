@@ -1,0 +1,134 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(242, 245, 255);
+}
+
+header{
+    margin-top: 10em;
+    margin-bottom: 2em;
+}
+
+ul{
+    list-style: none;
+}
+
+li{
+    padding: 1em;
+    width: 100%;
+}
+
+#main-container{
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    background-color: tomato;
+    padding: 1em;
+    box-shadow: 0px 7px 20px -1px rgba(0,0,0,0.57);
+}
+
+#main-card{
+    text-align: center;
+    width: 100%;
+}
+
+
+
+.hide{
+    display: none;
+}
+
+.loading{
+    margin-top: 20em;
+}
+
+.nav-pages{
+    display: flex;
+    align-items: center;
+    height: 50px;
+    background-color: tomato;
+    width: 100%;
+}
+
+.link-nav img{
+    height: 40px;
+}
+
+.link-nav{
+    color: white;
+    text-decoration: none;
+    margin-left: 1em;
+    font-size: large;
+    text-align: center;
+}
+
+.links-main-card{
+   
+    background-color: #414141;
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: large;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.links-main-card:hover{
+    background-color: #fff;
+    color: #414141;
+}
+
+.fornec-card{
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0px 7px 20px -1px rgba(0,0,0,0.57);
+    padding: 1em;
+    width: 500px;
+    text-align: center;
+}
+
+.cabecalho-card{
+    display: flex;
+    gap: 1em;
+    background-color: tomato;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+/* FORNECEDOR */
+#fornec-main-container{
+    margin: 3em auto 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+#fornec-main-container h2{
+    text-align: center;
+}
+
+#cards{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
