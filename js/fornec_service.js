@@ -62,17 +62,17 @@ function createFornecCard(fornec){
     cabecalhoCard.appendChild(fornecId);
     cabecalhoCard.appendChild(fornecLoja);
     cabecalhoCard.appendChild(fornecName);
-    cabecalhoCard.classList.add("cabecalho-card");
     fornecCard.appendChild(cabecalhoCard);
+    cabecalhoCard.classList.add("cabecalho-card");
     fornecCard.appendChild(fornecAddress);
     divButtons.appendChild(editButton);
+    editButton.classList.add("edit-button");
     divButtons.appendChild(deleteButton);
+    deleteButton.classList.add("delete-button");
     fornecCard.appendChild(divButtons);
     divButtons.classList.add("div-buttons");
-    editButton.classList.add("edit-button");
-    deleteButton.classList.add("delete-button");
-    fornecCard.classList.add("fornec-card");
     fornecCards.appendChild(fornecCard);
+    fornecCard.classList.add("fornec-card");
     
 }
 
