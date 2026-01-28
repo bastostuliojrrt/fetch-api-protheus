@@ -42,6 +42,9 @@ function createFornecCard(fornec){
     const fornecLoja = document.createElement("p");
     const fornecName = document.createElement("h3");
     const fornecAddress = document.createElement("p");
+    const divButtons = document.createElement("div");
+    const editButton = document.createElement("a");
+    const deleteButton = document.createElement("button");
 
     // ADD CONTENT AND CLASSES
     fornecId.innerText = `Código: ${fornec.code}`;
@@ -52,6 +55,8 @@ function createFornecCard(fornec){
     }else{
         fornecAddress.innerText = `Endereço: ${fornec.address.address}, ${fornec.address.zipCode}`;
     }
+    editButton.innerText = "Editar";
+    deleteButton.innerText = "Excluir";
 
     // APPEND ELEMENTS
     cabecalhoCard.appendChild(fornecId);
@@ -60,6 +65,12 @@ function createFornecCard(fornec){
     cabecalhoCard.classList.add("cabecalho-card");
     fornecCard.appendChild(cabecalhoCard);
     fornecCard.appendChild(fornecAddress);
+    divButtons.appendChild(editButton);
+    divButtons.appendChild(deleteButton);
+    fornecCard.appendChild(divButtons);
+    divButtons.classList.add("div-buttons");
+    editButton.classList.add("edit-button");
+    deleteButton.classList.add("delete-button");
     fornecCard.classList.add("fornec-card");
     fornecCards.appendChild(fornecCard);
     

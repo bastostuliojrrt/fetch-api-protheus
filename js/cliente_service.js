@@ -43,6 +43,9 @@ function createClientCard(cliente){
     const clientLoja = document.createElement("p");
     const clientName = document.createElement("h3");
     const clientAddress = document.createElement("p");
+    const divButtons = document.createElement("div");
+    const editButton = document.createElement("a");
+    const deleteButton = document.createElement("button");
 
     // ADD CONTENT AND CLASSES
     clientId.innerText = `Código: ${cliente.code}`;
@@ -53,6 +56,9 @@ function createClientCard(cliente){
     }else{
         clientAddress.innerText = `Endereço: ${cliente.address.address}, ${cliente.address.zipCode}`;
     }
+    editButton.innerText = "Editar";
+    deleteButton.innerText = "Excluir";
+    
 
     // APPEND ELEMENTS
     cabecalhoCard.appendChild(clientId);
@@ -61,6 +67,12 @@ function createClientCard(cliente){
     cabecalhoCard.classList.add("cabecalho-card");
     clientCard.appendChild(cabecalhoCard);
     clientCard.appendChild(clientAddress);
+    divButtons.appendChild(editButton);
+    divButtons.appendChild(deleteButton);
+    clientCard.appendChild(divButtons);
+    divButtons.classList.add("div-buttons");
+    editButton.classList.add("edit-button");
+    deleteButton.classList.add("delete-button");
     clientCard.classList.add("client-card");
     clientCards.appendChild(clientCard);
     
